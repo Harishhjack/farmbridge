@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: farmbridge-api
+    env: node
+    region: singapore
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        value: mongodb+srv://harishhhari16_db_user:Harishh1610@cluster0.b0hzsko.mongodb.net/farmbridge?retryWrites=true&w=majority&appName=Cluster0
+      - key: JWT_SECRET
+        value: farmbridge_jwt_secret_harishh_2026
+      - key: JWT_EXPIRE
+        value: 7d
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_URL
+        value: https://farmbridge.vercel.app
